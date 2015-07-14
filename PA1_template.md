@@ -205,7 +205,7 @@ step.means.weekday <- aggregate(data2$steps[data2$day.type=="weekday"],
                                 FUN=mean)
 
 # We'll plot both plots stacked on top of each other, with matching axes
-save.par <- par(mfrow=c(2,1), mar=c(5, 4, 2, 2))
+par(mfrow=c(2,1), mar=c(5, 4, 2, 2))
 ylim <- c(0, 240)
 ylab <- "Mean Steps per Interval"
 xlab <- "Time of Day (24-Hour Clock Format)"
@@ -226,8 +226,3 @@ axis(side=1, at=seq(0, 24*60, 60), labels=sprintf("%04d", seq(0, 2400, 100)))
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 
-
-```r
-# Restore saved graphics paramters
-par(save.par)
-```
